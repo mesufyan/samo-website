@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#E07A5F">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="manifest" href="manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/app.css">
+  <title>Discover — SAMO</title>
+  <meta name="robots" content="noindex">
+</head>
+<body>
+  <div id="siteHeader"></div>
+  <main class="page">
+    <div class="wrap">
+      <h1 class="h1">Who is nearby</h1>
+      <p class="lede">People in your city who speak your language. Change the filters to look further.</p>
+
+      <div class="card" id="gateNotice" hidden></div>
+
+      <div class="card">
+        <div class="filters">
+          <div class="field mb-0">
+            <label for="filterLang">Language</label>
+            <select id="filterLang" class="select"></select>
+          </div>
+          <div class="field mb-0">
+            <label for="filterCity">City</label>
+            <select id="filterCity" class="select"></select>
+          </div>
+          <div class="field mb-0">
+            <label for="filterWant">Looking for</label>
+            <select id="filterWant" class="select"></select>
+          </div>
+          <button class="btn btn-primary" id="searchBtn">Search</button>
+        </div>
+      </div>
+
+      <p class="muted mt-6" id="resultCount" aria-live="polite"></p>
+      <div class="people-grid" id="peopleGrid"></div>
+    </div>
+  </main>
+  <div id="siteFooter"></div>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/core.js"></script>
+  <script src="assets/js/backend.js"></script>
+  <script src="assets/js/discover.js"></script>
+</body>
+</html>

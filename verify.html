@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#E07A5F">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="manifest" href="manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/app.css">
+  <title>Confirm your details — SAMO</title>
+  <meta name="robots" content="noindex">
+</head>
+<body>
+  <div id="siteHeader"></div>
+
+  <main class="page">
+    <div class="wrap wrap--narrow">
+      <div class="auth-card">
+        <h1 class="h1">Confirm it is you</h1>
+        <p class="lede">Two checks. They keep fake accounts off SAMO, which is the main thing that makes meeting a stranger reasonable.</p>
+
+        <div class="card mb-6" id="stepList"></div>
+
+        <div class="card" id="codePanel">
+          <h2 class="h2" id="codeTitle">Check your email</h2>
+          <p class="muted mb-4" id="codeSubtitle">We sent a six digit code to your address.</p>
+
+          <div id="demoCodeBox"></div>
+
+          <form id="codeForm" novalidate>
+            <div class="code-inputs" id="codeInputs" role="group" aria-label="Six digit code">
+              <input class="code-input" inputmode="numeric" maxlength="1" aria-label="Digit 1" autocomplete="one-time-code">
+              <input class="code-input" inputmode="numeric" maxlength="1" aria-label="Digit 2">
+              <input class="code-input" inputmode="numeric" maxlength="1" aria-label="Digit 3">
+              <input class="code-input" inputmode="numeric" maxlength="1" aria-label="Digit 4">
+              <input class="code-input" inputmode="numeric" maxlength="1" aria-label="Digit 5">
+              <input class="code-input" inputmode="numeric" maxlength="1" aria-label="Digit 6">
+            </div>
+            <p class="field-error-msg hidden text-center" id="codeError"></p>
+
+            <button type="submit" class="btn btn-primary btn-block btn-lg mt-6" id="verifyBtn">Confirm code</button>
+          </form>
+
+          <div class="row row--between mt-4">
+            <button class="btn btn-ghost btn-sm" id="resendBtn">Send a new code</button>
+            <button class="btn btn-ghost btn-sm" id="skipPhoneBtn">Do this later</button>
+          </div>
+        </div>
+
+        <div class="card notice--ok hidden" id="allDone">
+          <h2 class="h2">Both confirmed</h2>
+          <p class="muted mb-4">Your account is verified. Next comes your profile, which takes about ten minutes. You can change any of it later.</p>
+          <a href="onboarding.html" class="btn btn-primary btn-lg">Build my profile</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="siteFooter"></div>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/core.js"></script>
+  <script src="assets/js/backend.js"></script>
+  <script src="assets/js/verify.js"></script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#E07A5F">
+  <title>Build your profile — SAMO</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="manifest" href="manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+  <div id="siteHeader"></div>
+
+  <main class="page">
+    <div class="wrap wrap--mid">
+
+      <div class="wizard-head">
+        <h1 class="h1" id="wizardTitle">Your profile</h1>
+        <p class="lede" id="wizardLede">About ten minutes. Everything saves as you go, so you can stop and come back. You can change all of it later.</p>
+        <div class="progress-track"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+        <div class="step-dots" id="stepDots"></div>
+      </div>
+
+      <div class="card">
+
+        <!-- 1. Photo and name -->
+        <section class="wizard-step" data-step="0">
+          <h2 class="h2">A photo and your first name</h2>
+          <p class="lede">People are meeting a stranger. A clear photo of your face is the single thing that makes that feel safe. Nobody sees your surname.</p>
+
+          <div class="photo-picker mb-6">
+            <button type="button" class="photo-drop" id="photoDrop" aria-label="Choose a photo">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+              <span>Add a photo</span>
+              <img id="photoPreview" alt="" hidden>
+            </button>
+            <input type="file" id="photoInput" accept="image/*" hidden>
+            <div>
+              <p class="field-hint" style="max-width:280px">A clear photo of your face, looking at the camera. No group shots, no sunglasses, no photos of other people without their say-so.</p>
+              <div class="btn-row">
+                <button type="button" class="btn btn-secondary btn-sm" id="photoPick">Choose file</button>
+                <button type="button" class="btn btn-ghost btn-sm hidden" id="photoRemove">Remove</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="displayName">First name</label>
+            <p class="field-hint">Or the name people actually call you.</p>
+            <input type="text" id="displayName" class="input" maxlength="40" autocomplete="given-name">
+          </div>
+        </section>
+
+        <!-- 2. Languages -->
+        <section class="wizard-step" data-step="1">
+          <h2 class="h2">Your languages</h2>
+          <p class="lede">This is the whole point of SAMO, so take a moment. Your mother tongue is what people search by.</p>
+
+          <div class="field">
+            <span class="field-label">Mother tongue</span>
+            <p class="field-hint">Pick every language you grew up speaking. Most people pick one or two.</p>
+            <input type="search" class="input lang-search" id="motherSearch" placeholder="Search 59 languages" aria-label="Search languages">
+            <div class="lang-scroll" id="motherList"></div>
+            <div class="chip-set mt-2" id="motherChosen"></div>
+          </div>
+
+          <div class="field">
+            <span class="field-label">Other languages you speak <span class="muted">(optional)</span></span>
+            <p class="field-hint">Helpful when someone speaks a bit of your language and you speak a bit of theirs.</p>
+            <input type="search" class="input lang-search" id="alsoSearch" placeholder="Search languages" aria-label="Search other languages">
+            <div class="lang-scroll" id="alsoList"></div>
+            <div class="chip-set mt-2" id="alsoChosen"></div>
+          </div>
+        </section>
+
+        <!-- 3. Where you are -->
+        <section class="wizard-step" data-step="2">
+          <h2 class="h2">Where you are</h2>
+          <p class="lede">Your city decides who you see. Your exact address is never asked for and never stored.</p>
+
+          <div class="field">
+            <label for="city">City</label>
+            <select id="city" class="select"></select>
+          </div>
+
+          <div class="field">
+            <label for="fromCountry">Where you are originally from <span class="muted">(optional)</span></label>
+            <input type="text" id="fromCountry" class="input" maxlength="60" placeholder="Lahore, Pakistan">
+          </div>
+
+          <div class="notice mt-6">
+            <strong>On location.</strong> SAMO shows distance in bands, never a point on a map. If you turn on precise nearby search later, your position is rounded to a 150 metre grid before it leaves your phone.
+          </div>
+        </section>
+
+        <!-- 4. About you -->
+        <section class="wizard-step" data-step="3">
+          <h2 class="h2">About you</h2>
+          <p class="lede">Age and gender help people decide who to meet. You can limit who sees your profile in Settings.</p>
+
+          <div class="grid-2">
+            <div class="field">
+              <label for="birthYear">Year of birth</label>
+              <input type="number" id="birthYear" class="input" min="1900" max="2100" placeholder="1996" inputmode="numeric">
+              <span class="field-error-msg hidden" id="birthYearError"></span>
+            </div>
+            <div class="field">
+              <label for="gender">Gender</label>
+              <select id="gender" class="select"></select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="occupation">What you do <span class="muted">(optional)</span></label>
+            <input type="text" id="occupation" class="input" maxlength="60" placeholder="Nurse, PhD student, driver">
+          </div>
+
+          <div class="field">
+            <label for="bio">A few lines about you</label>
+            <p class="field-hint">What brought you here, what you miss, what you would like to do with someone. Write it in your own language if that is easier. At least 40 characters.</p>
+            <textarea id="bio" class="textarea" maxlength="600" placeholder="I moved here two years ago for work. I miss speaking properly, not just work talk. I like long walks, cricket on Sundays, and I cook far too much food for one person."></textarea>
+            <div class="char-count"><span id="bioCount">0</span> / 600</div>
+          </div>
+        </section>
+
+        <!-- 5. What you want -->
+        <section class="wizard-step" data-step="4">
+          <h2 class="h2">What you are here for</h2>
+          <p class="lede">Pick as many as fit. This stops mismatched introductions more than anything else on the form.</p>
+
+          <div class="field">
+            <span class="field-label">I would like</span>
+            <div class="chip-set" id="lookingForSet"></div>
+          </div>
+
+          <div class="field">
+            <span class="field-label">Interests <span class="muted">(optional)</span></span>
+            <p class="field-hint">Three or four is plenty. It gives people something to open with.</p>
+            <div class="chip-set" id="interestSet"></div>
+          </div>
+        </section>
+
+        <!-- 6. Availability and privacy -->
+        <section class="wizard-step" data-step="5">
+          <h2 class="h2">When you are free, and who can see you</h2>
+          <p class="lede">Both of these are easy to change later.</p>
+
+          <div class="field">
+            <span class="field-label">Usually free <span class="muted">(optional)</span></span>
+            <div class="chip-set" id="availabilitySet"></div>
+          </div>
+
+          <div class="field">
+            <label for="visibility">Who can see my profile</label>
+            <select id="visibility" class="select"></select>
+            <p class="field-hint mt-2">Many members choose to be visible only to people of their own gender. There is no wrong answer here.</p>
+          </div>
+        </section>
+
+        <!-- 7. Review -->
+        <section class="wizard-step" data-step="6">
+          <h2 class="h2">Check it over</h2>
+          <p class="lede">This is what other members will see.</p>
+          <div id="reviewPane"></div>
+          <div class="notice notice--warn mt-6 hidden" id="reviewMissing"></div>
+        </section>
+
+        <div class="wizard-nav">
+          <button type="button" class="btn btn-ghost" id="backBtn">Back</button>
+          <div class="btn-row">
+            <button type="button" class="btn btn-ghost" id="saveExitBtn">Save and finish later</button>
+            <button type="button" class="btn btn-primary" id="nextBtn">Continue</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <div id="siteFooter"></div>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/core.js"></script>
+  <script src="assets/js/backend.js"></script>
+  <script src="assets/js/onboarding.js"></script>
+</body>
+</html>

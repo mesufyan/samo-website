@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#E07A5F">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="manifest" href="manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/app.css">
+  <title>Profile — SAMO</title>
+  <meta name="robots" content="noindex">
+</head>
+<body>
+  <div id="siteHeader"></div>
+  <main class="page">
+    <div class="wrap wrap--mid">
+      <div id="profileRoot">
+        <div class="card"><div class="skeleton skeleton-card"></div></div>
+      </div>
+    </div>
+  </main>
+  <div id="siteFooter"></div>
+
+  <div class="modal-backdrop" id="connectModal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="connectTitle">
+      <h2 class="h2" id="connectTitle">Say hello</h2>
+      <p class="muted mb-4">One short message in your own language works better than anything clever. Say who you are and what you suggest.</p>
+      <div class="field">
+        <label for="connectMsg">Your message</label>
+        <textarea id="connectMsg" class="textarea" maxlength="400" placeholder="Hello, I am Sufyan, also from Lahore. I am usually free Saturday mornings if you fancy a coffee near the station."></textarea>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-primary" id="connectSend">Send request</button>
+        <button class="btn btn-ghost" id="connectCancel">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="reportModal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="reportTitle">
+      <h2 class="h2" id="reportTitle">Report this profile</h2>
+      <p class="muted mb-4">A moderator who reads the language of the conversation looks at every report.</p>
+      <div class="field">
+        <label for="reportReason">What is wrong</label>
+        <select id="reportReason" class="select">
+          <option value="fake">The photo or identity looks fake</option>
+          <option value="harassment">Harassment or abusive messages</option>
+          <option value="sexual">Unwanted sexual content</option>
+          <option value="scam">Asking for money or a scam</option>
+          <option value="minor">This person appears to be under 18</option>
+          <option value="other">Something else</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="reportDetail">Anything you want to add <span class="muted">(optional)</span></label>
+        <textarea id="reportDetail" class="textarea" maxlength="600"></textarea>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-danger" id="reportSend">Send report</button>
+        <button class="btn btn-ghost" id="reportCancel">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/core.js"></script>
+  <script src="assets/js/backend.js"></script>
+  <script src="assets/js/profile.js"></script>
+</body>
+</html>

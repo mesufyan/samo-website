@@ -24,65 +24,18 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/app.css">
 </head>
 <body class="antialiased bg-samo-bg text-samo-text">
 
   <a href="#main" class="sr-only focus:not-sr-only top-4 left-4 z-50 px-4 py-2 bg-samo-terracotta text-white rounded-lg shadow-lg">Skip to main content</a>
 
-  <!-- ===================================================== NAVIGATION ==== -->
-  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300" aria-label="Main">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <a href="#hero" class="flex items-center gap-2" aria-label="SAMO home">
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" class="logo-pulse rounded-lg" aria-hidden="true">
-          <rect width="32" height="32" rx="8" fill="#E07A5F"/>
-          <path d="M16 8L22 16H10L16 8Z" fill="white"/>
-          <circle cx="16" cy="20" r="3" fill="white"/>
-        </svg>
-        <span class="text-xl font-extrabold text-samo-teal tracking-tight">SAMO</span>
-      </a>
-
-      <div class="hidden lg:flex items-center gap-1">
-        <a href="#features" class="nav-link px-4 py-2 rounded-lg">How it works</a>
-        <a href="#languages" class="nav-link px-4 py-2 rounded-lg">Languages</a>
-        <a href="#demo" class="nav-link px-4 py-2 rounded-lg">Try it</a>
-        <a href="#pricing" class="nav-link px-4 py-2 rounded-lg">Pricing</a>
-        <a href="#faq" class="nav-link px-4 py-2 rounded-lg">FAQ</a>
-      </div>
-
-      <div class="flex items-center gap-2">
-        <div class="relative hidden sm:block">
-          <button id="langBtn" class="lang-pill flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm" aria-haspopup="listbox" aria-expanded="false">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-            <span id="langLabel">Urdu</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-          </button>
-          <ul id="langMenu" class="absolute right-0 mt-2 w-64 max-h-80 overflow-y-auto glass-card rounded-xl py-2 shadow-2xl hidden z-20" role="listbox" aria-label="Languages"></ul>
-        </div>
-
-        <a href="#waitlist" class="btn-primary px-5 py-2.5 rounded-full text-sm font-semibold hidden sm:inline-flex items-center gap-2">
-          <span>Join the waitlist</span>
-        </a>
-
-        <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-lg text-samo-teal" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-        </button>
-      </div>
-    </div>
-
-    <div id="mobileMenu" class="hidden lg:hidden border-t border-samo-cream/30 bg-white/95 backdrop-blur px-4 py-3 space-y-1">
-      <a href="#features" class="block nav-link px-3 py-2 rounded-lg">How it works</a>
-      <a href="#languages" class="block nav-link px-3 py-2 rounded-lg">Languages</a>
-      <a href="#demo" class="block nav-link px-3 py-2 rounded-lg">Try it</a>
-      <a href="#pricing" class="block nav-link px-3 py-2 rounded-lg">Pricing</a>
-      <a href="#faq" class="block nav-link px-3 py-2 rounded-lg">FAQ</a>
-      <a href="#waitlist" class="block btn-primary text-center px-4 py-2.5 rounded-full text-sm font-semibold mt-2">Join the waitlist</a>
-    </div>
-  </nav>
+  <div id="siteHeader"></div>
 
   <main id="main">
 
     <!-- ========================================================= HERO ==== -->
-    <header id="hero" class="relative pt-28 pb-20 lg:pt-36 lg:pb-28 overflow-hidden" aria-labelledby="hero-title">
+    <header id="hero" class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden" aria-labelledby="hero-title">
       <div class="absolute inset-0 -z-10" aria-hidden="true">
         <svg class="w-full h-full" viewBox="0 0 1440 900" preserveAspectRatio="none">
           <defs>
@@ -119,8 +72,8 @@
             </p>
 
             <div class="flex flex-col sm:flex-row items-center lg:justify-start justify-center gap-4 animate-fade-up" style="animation-delay:.4s">
-              <a href="#waitlist" class="btn-primary w-full sm:w-auto px-8 py-4 rounded-full text-base font-semibold inline-flex items-center justify-center gap-2 group">
-                Join the waitlist
+              <a href="signup.html" data-signed-out-cta class="btn-primary w-full sm:w-auto px-8 py-4 rounded-full text-base font-semibold inline-flex items-center justify-center gap-2 group">
+                Create my account
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="group-hover:translate-x-1 transition-transform" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
               <a href="#demo" class="btn-secondary w-full sm:w-auto px-8 py-4 rounded-full text-base font-semibold text-center">See how the search works</a>
@@ -339,69 +292,13 @@
     </section>
   </main>
 
-  <!-- ======================================================== FOOTER ==== -->
-  <footer class="bg-samo-teal text-white/60 py-12 px-4 border-t border-white/10">
-    <div class="max-w-7xl mx-auto">
-      <div class="grid md:grid-cols-4 gap-8 mb-10">
-        <div class="md:col-span-2">
-          <div class="flex items-center gap-2 mb-4">
-            <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#E07A5F"/><path d="M16 8L22 16H10L16 8Z" fill="white"/><circle cx="16" cy="20" r="3" fill="white"/></svg>
-            <span class="text-xl font-extrabold tracking-tight text-white">SAMO</span>
-          </div>
-          <p class="text-sm max-w-xs text-white/50">Find your language. Find your people. Built for the millions of people in Europe who go a whole week without speaking their mother tongue.</p>
-        </div>
-        <nav aria-label="Product">
-          <h3 class="font-semibold text-white mb-3 text-sm uppercase tracking-wider">Product</h3>
-          <ul class="space-y-2 text-sm">
-            <li><a href="#features" class="hover:text-samo-terracotta transition-colors">How it works</a></li>
-            <li><a href="#languages" class="hover:text-samo-terracotta transition-colors">Languages</a></li>
-            <li><a href="#pricing" class="hover:text-samo-terracotta transition-colors">Pricing</a></li>
-            <li><a href="#faq" class="hover:text-samo-terracotta transition-colors">Safety and privacy</a></li>
-          </ul>
-        </nav>
-        <nav aria-label="Company">
-          <h3 class="font-semibold text-white mb-3 text-sm uppercase tracking-wider">Company</h3>
-          <ul class="space-y-2 text-sm">
-            <li><a href="#" class="hover:text-samo-terracotta transition-colors">About</a></li>
-            <li><a href="#waitlist" class="hover:text-samo-terracotta transition-colors">Waitlist</a></li>
-            <li><a href="#" class="hover:text-samo-terracotta transition-colors">Contact</a></li>
-            <li><a href="#" class="hover:text-samo-terracotta transition-colors">Press</a></li>
-          </ul>
-        </nav>
-      </div>
-      <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
-        <p class="text-xs text-white/40">© <span id="year">2026</span> SAMO. Prototype site — figures and profiles shown are illustrative.</p>
-        <div class="flex items-center gap-6">
-          <a href="#" class="hover:text-samo-terracotta transition-colors" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zm1.78 13.02H3.56V9h3.56zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
-          <a href="#" class="hover:text-samo-terracotta transition-colors" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <div id="siteFooter"></div>
 
-  <!-- ========================================================= TOAST ==== -->
-  <div id="toast" class="fixed bottom-6 right-6 z-50 transform transition-all duration-500 translate-y-20 opacity-0 pointer-events-none" role="status" aria-live="polite">
-    <div class="glass-card px-5 py-4 rounded-xl shadow-2xl flex items-center gap-3 max-w-sm">
-      <span class="w-8 h-8 rounded-full bg-samo-terracotta/10 flex items-center justify-center flex-shrink-0 text-samo-terracotta">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-      </span>
-      <div>
-        <p class="font-semibold text-samo-teal text-sm" id="toastTitle">Done</p>
-        <p class="text-sm text-samo-text-muted" id="toastMsg"></p>
-      </div>
-      <button class="ms-auto text-samo-text-muted hover:text-samo-teal text-xl leading-none" id="toastDismiss" aria-label="Dismiss">&times;</button>
-    </div>
-  </div>
-
-  <!-- ======================================================= SCRIPTS ==== -->
-  <script>
-    /* Edit this block to wire the form to a real service.
-       Formspree example: 'https://formspree.io/f/xxxxxxx'
-       Leave empty and signups stay in the browser only. */
-    window.SAMO_CONFIG = { FORM_ENDPOINT: '' };
-  </script>
+  <script src="assets/js/config.js"></script>
   <script src="assets/js/data.js"></script>
-  <script src="assets/js/app.js"></script>
+  <script src="assets/js/core.js"></script>
+  <script src="assets/js/backend.js"></script>
+  <script src="assets/js/landing.js"></script>
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function () {

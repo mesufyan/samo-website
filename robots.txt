@@ -1,4 +1,11 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://USERNAME.github.io/samo-website/sitemap.xml
+# Signed-in areas: nothing useful for a crawler and no reason to index them.
+Disallow: /discover.html
+Disallow: /profile.html
+Disallow: /settings.html
+Disallow: /onboarding.html
+Disallow: /verify.html
+
+Sitemap: https://mesufyan.github.io/samo-website/sitemap.xml

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#E07A5F">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="manifest" href="manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/app.css">
+  <title>Safety — SAMO</title>
+  <meta name="description" content="How SAMO checks who is on the platform, what we ask of members, and what to do if something goes wrong.">
+</head>
+<body>
+  <div id="siteHeader"></div>
+  <main class="page">
+    <div class="wrap wrap--mid">
+      <h1 class="h1">Safety</h1>
+      <p class="lede">SAMO asks people to meet strangers. That only works if the checks are real and the rules are clear.</p>
+
+      <div class="card">
+        <h2 class="h2">What we check before anyone appears in search</h2>
+        <div class="setting-row"><div class="info"><h3>A confirmed email address</h3>
+          <p>A code goes to the address and has to come back. Ten minute expiry, five attempts.</p></div></div>
+        <div class="setting-row"><div class="info"><h3>A confirmed mobile number</h3>
+          <p>The same again by SMS. A phone number is far harder to churn through than an email address, which is what makes it worth asking for.</p></div></div>
+        <div class="setting-row"><div class="info"><h3>A photo of a face</h3>
+          <p>No photo, no listing. Group shots and pictures of scenery do not count.</p></div></div>
+        <div class="setting-row"><div class="info"><h3>A profile someone actually wrote</h3>
+          <p>Forty characters minimum, plus what they are here for. Empty profiles are where trouble starts.</p></div></div>
+      </div>
+
+      <div class="card">
+        <h2 class="h2">Meeting someone the first time</h2>
+        <ul class="todo-list">
+          <li><span class="dot"></span>Meet in a café, library or park. Never at home, yours or theirs.</li>
+          <li><span class="dot"></span>Tell one person where you are going and when you expect to be back.</li>
+          <li><span class="dot"></span>Make your own way there and your own way back.</li>
+          <li><span class="dot"></span>Keep it short the first time. Half an hour is plenty.</li>
+          <li><span class="dot"></span>If anything feels wrong, leave. You owe nobody an explanation.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2 class="h2">Money</h2>
+        <p class="muted">Nobody on SAMO should ever ask you for money, for your bank details, for a loan, or for help moving money for someone else. Anyone who does is running a scam, however sympathetic the story. Report them and block them. This is the most common way people who are far from home get hurt.</p>
+      </div>
+
+      <div class="card">
+        <h2 class="h2">Reporting and blocking</h2>
+        <p class="muted mb-4">Every profile has a Report button and a Block button. Blocking is immediate and permanent: they vanish from your results, cannot see you, and cannot reach you from another account tied to the same verified identity. Reports are read by a moderator who speaks the language of the conversation.</p>
+        <p class="muted mb-0">We act fastest on: anyone who appears to be under 18, sexual content sent to someone who did not ask for it, threats, and requests for money.</p>
+      </div>
+
+      <div class="card notice--warn">
+        <h2 class="h2">If you are in danger right now</h2>
+        <p class="mb-0">Call your local emergency number. Across the EU that is <strong>112</strong>. Report to us afterwards; getting safe comes first.</p>
+      </div>
+    </div>
+  </main>
+  <div id="siteFooter"></div>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/core.js"></script>
+  <script src="assets/js/backend.js"></script>
+  <script>Core.boot({}).catch(function(){});</script>
+</body>
+</html>

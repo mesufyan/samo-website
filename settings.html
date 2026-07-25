@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#E07A5F">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="manifest" href="manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/app.css">
+  <title>Settings — SAMO</title>
+  <meta name="robots" content="noindex">
+</head>
+<body>
+  <div id="siteHeader"></div>
+  <main class="page">
+    <div class="wrap wrap--mid">
+      <h1 class="h1">Settings</h1>
+      <p class="lede">Your account, your privacy, and your data.</p>
+
+      <div class="card">
+        <h2 class="h2">Account</h2>
+        <div id="accountRows"></div>
+      </div>
+
+      <div class="card">
+        <h2 class="h2">Privacy</h2>
+        <div class="field">
+          <label for="visibility">Who can see my profile</label>
+          <select id="visibility" class="select"></select>
+        </div>
+        <div class="setting-row">
+          <div class="info">
+            <h3>Coffee Mode</h3>
+            <p>Show a green ring on your profile when you are free right now. Switches itself off after two hours.</p>
+          </div>
+          <label class="check"><input type="checkbox" id="coffeeMode"><span>On</span></label>
+        </div>
+        <button class="btn btn-primary mt-4" id="savePrivacy">Save privacy settings</button>
+      </div>
+
+      <div class="card">
+        <h2 class="h2">Change password</h2>
+        <div class="field">
+          <label for="currentPw">Current password</label>
+          <input type="password" id="currentPw" class="input" autocomplete="current-password">
+        </div>
+        <div class="field">
+          <label for="newPw">New password</label>
+          <input type="password" id="newPw" class="input" autocomplete="new-password">
+          <div class="pw-meter" aria-hidden="true">
+            <span class="pw-seg" data-seg="1"></span><span class="pw-seg" data-seg="2"></span>
+            <span class="pw-seg" data-seg="3"></span><span class="pw-seg" data-seg="4"></span>
+          </div>
+          <p class="pw-label" id="pwLabel"></p>
+        </div>
+        <button class="btn btn-primary" id="changePwBtn">Change password</button>
+      </div>
+
+      <div class="card">
+        <h2 class="h2">Your data</h2>
+        <div class="setting-row">
+          <div class="info">
+            <h3>Download everything we hold</h3>
+            <p>A JSON file with your account details, profile and connection requests.</p>
+          </div>
+          <button class="btn btn-secondary btn-sm" id="exportBtn">Download</button>
+        </div>
+      </div>
+
+      <div class="card danger-zone">
+        <h2 class="h2">Delete your account</h2>
+        <p class="muted mb-4">Your profile disappears immediately. Messages and location history are erased within 30 days. This cannot be undone, so download your data first if you want it.</p>
+        <button class="btn btn-danger" id="deleteBtn">Delete my account</button>
+      </div>
+    </div>
+  </main>
+  <div id="siteFooter"></div>
+
+  <div class="modal-backdrop" id="deleteModal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="delTitle">
+      <h2 class="h2" id="delTitle">Delete your account</h2>
+      <p class="muted mb-4">Type <strong>DELETE</strong> below to confirm. There is no way back from this.</p>
+      <div class="field">
+        <label for="delConfirm" class="sr-only">Type DELETE</label>
+        <input type="text" id="delConfirm" class="input" placeholder="DELETE" autocomplete="off">
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-danger" id="delConfirmBtn" disabled>Delete permanently</button>
+        <button class="btn btn-ghost" id="delCancel">Keep my account</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/core.js"></script>
+  <script src="assets/js/backend.js"></script>
+  <script src="assets/js/settings.js"></script>
+</body>
+</html>

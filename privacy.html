@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#E07A5F">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="manifest" href="manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/app.css">
+  <title>Privacy — SAMO</title>
+  <meta name="description" content="What SAMO collects, why, how long it is kept, and how to get rid of it.">
+</head>
+<body>
+  <div id="siteHeader"></div>
+  <main class="page">
+    <div class="wrap wrap--mid">
+      <h1 class="h1">Privacy</h1>
+      <p class="lede">Plain version first. This is a template, not legal advice: have a lawyer check it before you launch in the EU.</p>
+
+      <div class="card notice--warn">
+        <strong>Template notice.</strong> The text below describes how the product is designed to behave. Before you take real signups you need a real privacy policy naming your legal entity, your data protection contact, your lawful basis under GDPR, and your processors.
+      </div>
+
+      <div class="card">
+        <h2 class="h2">What we collect</h2>
+        <dl class="detail-grid">
+          <div class="detail"><dt>To make an account</dt><dd>Email address, mobile number, password</dd></div>
+          <div class="detail"><dt>For your profile</dt><dd>Photo, first name, year of birth, gender, languages, city, bio</dd></div>
+          <div class="detail"><dt>If you turn it on</dt><dd>Approximate location, rounded to a 150 m grid</dd></div>
+          <div class="detail"><dt>Automatically</dt><dd>Sign-in times and device type, for security</dd></div>
+        </dl>
+      </div>
+
+      <div class="card">
+        <h2 class="h2">What we never do</h2>
+        <ul class="todo-list">
+          <li><span class="dot"></span>Sell or rent your data to anyone.</li>
+          <li><span class="dot"></span>Show your exact location to another member.</li>
+          <li><span class="dot"></span>Show your email address, phone number or surname on your profile.</li>
+          <li><span class="dot"></span>Run advertising or third party trackers.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2 class="h2">How long we keep it</h2>
+        <p class="muted mb-0">Your profile lives as long as your account. Location history is deleted after 24 hours. Delete your account and everything else goes within 30 days, apart from records we are legally required to keep, such as a log of a serious safety report.</p>
+      </div>
+
+      <div class="card">
+        <h2 class="h2">Your rights</h2>
+        <p class="muted mb-4">Under GDPR you can ask for a copy of your data, correct it, delete it, or object to how it is used. The first two are self-service in Settings.</p>
+        <a class="btn btn-secondary" href="settings.html">Go to Settings</a>
+      </div>
+    </div>
+  </main>
+  <div id="siteFooter"></div>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/core.js"></script>
+  <script src="assets/js/backend.js"></script>
+  <script>Core.boot({}).catch(function(){});</script>
+</body>
+</html>
